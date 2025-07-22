@@ -32,7 +32,7 @@ const Form = ({fetchWeather}: FormProps) => {
             return
         }
 
-        fetchWeather()
+        fetchWeather(search)
 
 
     }
