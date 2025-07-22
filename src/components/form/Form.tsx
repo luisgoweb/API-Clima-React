@@ -5,7 +5,7 @@ import Alert from "../alert/Alert"
 import styles from "./Form.module.css"
 
 type FormProps = {
-fetchWeather: () => void
+fetchWeather: (search : SearchType) => Promise<void>
 }
 
 const Form = ({fetchWeather}: FormProps) => {
