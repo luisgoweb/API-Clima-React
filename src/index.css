@@ -1,0 +1,27 @@
+
+:root {
+    --white : #fff;
+    --primary: #F59E0B;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    margin: 0;
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto; /* Propiedad moderna para mejorar la legibilidad */
+    font-style: normal; /* Asegura que el estilo sea normal */
+    /* Puedes poner un peso por defecto si quieres, por ejemplo: */
+    line-height: 1.5; /* Altura de línea para mejorar la legibilidad del texto */
+    -webkit-font-smoothing: antialiased; /* Suavizado de fuentes para navegadores basados en WebKit */
+    -moz-osx-font-smoothing: grayscale; /* Suavizado de fuentes para Firefox en macOS */
+    background-image: url('/bg_clima.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: var(--white);
+    font-size: 2rem;
+    
+  }
