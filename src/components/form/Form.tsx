@@ -1,6 +1,7 @@
-import { useState, type ChangeEvent } from "react"
+import { useState, type ChangeEvent, type FormEvent } from "react"
 import { countries } from "../../data/countries"
 import type { SearchType } from "../../types"
+import Alert from "../alert/Alert"
 import styles from "./Form.module.css"
 
 
@@ -9,6 +10,7 @@ const Form = () => {
         city: '',
         country: ''
     })
+    const[alert, setAlert] = useState('')
 
     const handleChange = (e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>) => {
         setSearch({
@@ -17,8 +19,21 @@ const Form = () => {
         })
     }
 
+    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+
+        if(Object.values(search).includes('')){
+            setAlert('Todos los campos son obligatorios')
+            return
+        }
+
+    }
+
   return (
-    <form className={styles.form} >
+    <form 
+    className={styles.form}
+    onSubmit={handleSubmit}
+    >
         <div className={styles.field}>
             <label htmlFor="city">Ciudad:</label>
             <input 
@@ -50,6 +65,8 @@ const Form = () => {
         type="submit"
         value="Consultar Clima"
         />
+
+       {alert && <Alert >{alert}</Alert>}
     </form>
   )
 }
