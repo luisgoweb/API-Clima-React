@@ -1,10 +1,11 @@
 import { useState, type ChangeEvent } from "react"
 import { countries } from "../../data/countries"
+import type { SearchType } from "../../types"
 import styles from "./Form.module.css"
 
 
 const Form = () => {
-    const[search, setSearch] = useState({
+    const[search, setSearch] = useState<SearchType>({
         city: '',
         country: ''
     })
