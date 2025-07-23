@@ -16,6 +16,7 @@ const Form = ({fetchWeather}: FormProps) => {
         country: ''
     })
     const[alert, setAlert] = useState('')
+   
 
     const handleChange = (e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>) => {
         setSearch({
@@ -31,6 +32,8 @@ const Form = ({fetchWeather}: FormProps) => {
             setAlert('Todos los campos son obligatorios')
             return
         }
+
+        setAlert('')
 
         fetchWeather(search)
 

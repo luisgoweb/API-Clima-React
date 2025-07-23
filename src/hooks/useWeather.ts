@@ -16,22 +16,37 @@ export type weatherSchema = z.infer<typeof weatherSchema>
 
 export const useWeather = () => {
 
-    const [weather, setWeather] = useState<weatherSchema>({
+    const initialState = {
         name: '',
         main: {
             temp: 0,
             temp_max: 0,
             temp_min: 0
         }
-    })
+    }
+    const [weather, setWeather] = useState<weatherSchema>(initialState)
+    const[loading, setLoading] = useState(false)
+    const[notFound, setNotfound] = useState(false)
     
     const fetchWeather = async (search: SearchType) => {
+        setLoading(true)
+        setWeather(initialState)
+        setNotfound(false)
     
         try {
             const appId = import.meta.env.VITE_API_KEY
             const geoUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${search.city},${search.country}&appid=${appId}`
 
             const {data} = await axios(geoUrl)
+            
+            
+            //Comprobar si la ciudad existe
+            if(!data[0]){
+                setNotfound(true)
+                return
+            }
+            
+
             const lat = data[0].lat
             const lon = data[0].lon
 
@@ -42,18 +57,27 @@ export const useWeather = () => {
             if(result.success){
                 setWeather(result.data)
             }
+
+            
             
             
         } catch (error) {
             console.log(error)
+        }finally{
+            setLoading(false)
+            
+
         }
     }
 
     const hasWeatherData = useMemo(()=> weather.name ,[weather])
+    
 
     return {
         weather,
         fetchWeather,
-        hasWeatherData
+        hasWeatherData,
+        loading,
+        notFound
     }
 }
