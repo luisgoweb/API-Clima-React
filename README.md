@@ -1,69 +1,43 @@
-# React + TypeScript + Vite
+☀️ WeatherApp - Tu Pronóstico del Tiempo Instantáneo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Esta es una aplicación web sencilla y rápida que te permite obtener el pronóstico del tiempo actual para cualquier ciudad, consumiendo una API externa.
 
-Currently, two official plugins are available:
+Desarrollada con React, TypeScript y CSS Modules, esta aplicación demuestra mi habilidad para integrar APIs de terceros y, crucialmente, para validar datos de forma robusta con Zod, asegurando la integridad y seguridad de la información recibida.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🚀 ¡Explora el Proyecto!
 
-## Expanding the ESLint configuration
+👉 Whttps://api-clima-react-rose.vercel.app/ 👈
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+✨ Habilidades y Tecnologías Clave
+Integración de API Externa: Consumo de la API de Current Weather para obtener datos meteorológicos en tiempo real.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+🛡️ Validación de Datos con Zod: Implementación de esquemas de validación con Zod para asegurar que los datos recibidos de la API cumplen con la estructura esperada, previniendo errores y mejorando la fiabilidad.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+React: Construcción de una interfaz de usuario interactiva y eficiente.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+TypeScript: Garantiza la robustez del código y previene errores en tiempo de desarrollo mediante el tipado estricto.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+CSS Modules: Estilizado modular y encapsulado para mantener la limpieza y escalabilidad del CSS.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Vite: Herramienta de construcción rápida y ligera para un entorno de desarrollo ágil.
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+💻 Cómo Ejecutar el Proyecto Localmente
+
+npm install
+npm run dev
+
+Configura tu API Key:
+
+Obtén una API Key de https://openweathermap.org/
+
+Crea un archivo .env.local en la raíz de tu proyecto y añade tu clave:
+
+VITE_API_KEY=tu_api_key_aqui
+
+🧑‍💻 Conéctate Conmigo ¡Gracias por visitar mi proyecto! Estoy activamente buscando oportunidad como Desarrollador Front-end. Este proyecto es un testimonio de mi entusiasmo por las tecnologías modernas y mi compromiso con el aprendizaje continuo y la creación de soluciones eficientes. Si tienes alguna pregunta, comentario o una oportunidad interesante, no dudes en contactarme:
+
+GitHub: https://github.com/luisgoweb
+
+LinkedIn: https://www.linkedin.com/in/luis-gonzalez-dev-full-stack/
+
+Correo Electrónico: luisgocodev@gmail.com
